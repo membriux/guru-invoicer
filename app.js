@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
+
 
 // ––––– Routers Node.js Logic Files ––––– 
 var indexRouter = require('./routes/index');
@@ -19,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // ––––– Routes that are shown on domain (i.e. website.com/indexName) –––––
@@ -44,7 +47,7 @@ app.use(function(err, req, res, next) {
 // Host web app on specific port
 const port = process.env.port || 3000;
 app.listen(port, function() {
-  console.log('Your web app is running... on localhost:' + port)
+  console.log('Your web app is running... on http://localhost:' + port)
 })
 
 

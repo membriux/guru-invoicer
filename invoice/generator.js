@@ -3,7 +3,7 @@ const fs      = require("fs");
 const invoice = require('./invoice')
 
 
-function createInvoice(invoice, filename, success, error) {
+let generateInvoice = function (invoice, filename, success, error) {
     var postData = JSON.stringify(invoice);
     var options = {
         hostname  : "invoice-generator.com",
@@ -38,11 +38,9 @@ function createInvoice(invoice, filename, success, error) {
     }
 }
 
-createInvoice(invoice, 'invoice.pdf', function() {
-    console.log("Saved invoice to invoice.pdf");
-}, function(error) {
-    console.error(error);
-});
 
 
 
+
+
+module.exports = generateInvoice
