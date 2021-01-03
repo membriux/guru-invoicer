@@ -25,7 +25,7 @@ let createInvoice = function(inv) {
                 name: `Guru Tasks (${inv.cycleInit} to ${inv.cycleEnd})` ,
                 quantity: inv.hours,
                 unit_cost: 30,
-                description: "Description of tasks"
+                description: "TF Training Prep, TF weekly Check-in, Reporting, Guru Syncs, Student Communication, Technical Support Mentoring, Adhoc"
             }
         ]
     };
