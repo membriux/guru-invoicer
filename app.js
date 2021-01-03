@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Host web app on specific port
-const port = process.env.port || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log('Your web app is running... on http://localhost:' + port)
 })
