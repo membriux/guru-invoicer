@@ -23,7 +23,15 @@ block content
           label.form-label Invoice Cycle
           input#cycle.form-control(name='cycle' type='number' min='1' onChange="onCycleChange()")
         .col-12
-          button.btn.btn-primary(type='submit' formmethod='post') Generate Invoice
+          button#submit.btn.btn-primary(type='submit' formmethod='post' onclick='refresh()') Generate Invoice
+
+  .container  
+    .row
+      .col
+        br  
+        h3 Preview
+        iframe(src='invoice.pdf' width='500' height='678')
+
   
   script(src="js/cycler.js")
 

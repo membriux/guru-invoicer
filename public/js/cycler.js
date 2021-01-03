@@ -48,4 +48,13 @@ function setup() {
     updateCycleText(currentCycle)
 }
 
+function refresh() {
+    console.log("submitted")
+    setTimeout( function() {
+        $('iframe').attr('src', 'invoice.pdf');
+        console.log('generated')
+    }, 1500)
+}
+
+
 setup()
